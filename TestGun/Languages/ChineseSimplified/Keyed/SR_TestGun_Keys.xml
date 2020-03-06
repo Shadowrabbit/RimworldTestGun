@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <SR_Message_TestBullet_Success>{0}使用测试枪导致{1}感染瘟疫</SR_Message_TestBullet_Success>
+  <SR_Mote_TestBullet_Fail>{0}未触发瘟疫</SR_Mote_TestBullet_Fail>
+</LanguageData>

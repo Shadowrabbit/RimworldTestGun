@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 子弹的数据 -->
+<Defs>
+<!--该物品在C#中使用的数据类 继承了哪个物品 -->
+  <ThingDef Class="SR.ThingDef_TestBullet" ParentName="BaseBullet">
+    <!-- 代码中物品的名字 -->
+    <defName>Bullet_TestBullet</defName>
+    <!-- 游戏中物品显示的名字 -->
+    <label>测试子弹</label>
+    <graphicData>
+      <!-- 使用的纹理贴图 -->
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <!-- 使用哪个图形类的代码 -->
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+    <!-- 子弹类型 -->
+      <damageDef>Bullet</damageDef>
+      <!-- 子弹基础伤害 -->
+      <damageAmountBase>12</damageAmountBase>
+      <!-- 取消射击的反应速度 -->
+      <stoppingPower>1</stoppingPower>
+      <!-- 子弹的速度 -->
+      <speed>55</speed>
+    </projectile>
+    <!-- 触发瘟疫的概率 -->
+    <addHediffChance>0.5</addHediffChance>
+    <!-- Hediff这个词是游戏里独一无二的名字，字典里查不到，他的含义是某个部位上的状态，比如感染，仿生部位，瘟疫Plague是原版游戏其中的一种,我们定义的这个变量意义是储存附加给中弹生物的hediff类型 -->
+    <hediffToAdd>Plague</hediffToAdd>
+    <!-- 该物品在C#中使用的逻辑类 -->
+    <thingClass>SR.Projectile_TestBullet</thingClass>
+  </ThingDef>
+  <!-- 枪的数据 -->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>SR_Gun_TestGun</defName>
+    <label>影兔的测试枪</label>
+    <!-- 描述 -->
+    <description>影兔测试瘟疫效果的枪</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Revolver</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <!-- UI缩放 -->
+    <uiIconScale>1.4</uiIconScale>
+    <!-- 交互的音效 -->
+    <soundInteract>Interact_Revolver</soundInteract>
+    <!-- 个人猜测是艺术系统的标签 -->
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <!-- 基础属性 -->
+    <statBases>
+    <!-- 制作的工作量 -->
+      <WorkToMake>4000</WorkToMake>
+      <!-- 物品大小 -->
+      <Mass>1.4</Mass>
+      <!-- 贴脸的命中率 -->
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <!-- 短距离命中率 -->
+      <AccuracyShort>0.75</AccuracyShort>
+      <!-- 中距离命中率 -->
+      <AccuracyMedium>0.45</AccuracyMedium>
+      <!-- 远距离命中率 -->
+      <AccuracyLong>0.35</AccuracyLong>
+      <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
+    </statBases>
+    <!-- 武器标签 -->
+    <weaponTags>
+      <li>SimpleGun</li>
+      <li>Revolver</li>
+    </weaponTags>
+    <!-- 消耗列表 -->
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+    <!-- 技能需求 -->
+      <skillRequirements>
+        <Crafting>3</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <!-- 动作 -->
+    <verbs>
+      <li>
+      <!-- 射击 -->
+        <verbClass>Verb_Shoot</verbClass>
+        <!-- 是否有标准命令 -->
+        <hasStandardCommand>true</hasStandardCommand>
+        <!-- 子弹类型 -->
+        <defaultProjectile>Bullet_TestBullet</defaultProjectile>
+        <!-- 预热时间 -->
+        <warmupTime>0.3</warmupTime>
+        <!-- 射击距离 -->
+        <range>25.9</range>
+        <!-- 射击时使用的音效 -->
+        <soundCast>Shot_Revolver</soundCast>
+        <!-- 中弹时的音效 -->
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <!-- 枪口光效的缩放 -->
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+</Defs>

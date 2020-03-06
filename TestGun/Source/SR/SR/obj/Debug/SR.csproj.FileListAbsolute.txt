@@ -1,0 +1,6 @@
+E:\steam\steamapps\common\RimWorld\Mods\TestGun\Assemblies\SR.dll
+E:\steam\steamapps\common\RimWorld\Mods\TestGun\Assemblies\SR.pdb
+C:\Users\Administrator\Desktop\SR\SR\SR\obj\Debug\SR.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\SR\SR\SR\obj\Debug\SR.dll
+C:\Users\Administrator\Desktop\SR\SR\SR\obj\Debug\SR.pdb
+C:\Users\Administrator\Desktop\SR\SR\SR\obj\Debug\SR.csprojAssemblyReference.cache
